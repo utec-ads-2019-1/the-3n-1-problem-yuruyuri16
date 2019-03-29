@@ -27,6 +27,7 @@ int main(int argc, char **argv) {
     int i;
     int j;
     int max_cycle;
+    int n_cycles;
 
     std::vector<std::pair<std::pair<int, int>, bool> > lines;
 
@@ -43,9 +44,10 @@ int main(int argc, char **argv) {
         max_cycle = 0;
         for (int j = i.first.first; j <= i.first.second; ++j)
         {
-            if (get_num_cycles(j) > max_cycle)
+            n_cycles = get_num_cycles(j);
+            if (n_cycles > max_cycle)
             {
-                max_cycle = get_num_cycles(j);
+                max_cycle = n_cycles;
             }
         }
         if (i.second == false)
